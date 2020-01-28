@@ -1,0 +1,2 @@
+E:\1\ACross\make animalcrossing\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+E:\1\ACross\make animalcrossing\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
