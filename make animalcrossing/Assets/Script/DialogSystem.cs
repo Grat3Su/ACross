@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class DialogSystem : MonoBehaviour
 {
     const int NoPersonality = 3;
-    bool DialogStart;
-    bool InConversation;
-    bool DialogEnd;
+    bool DialogStart;//대화시작
+    bool InConversation;//대화중
+    bool DialogEnd;//대화끝
 
     int[] ContactNum;
     public Text Dialog;
@@ -31,6 +31,7 @@ public class DialogSystem : MonoBehaviour
         {
             Dialogpanel.SetActive(true);
             InConversation = true;
+            DialogStart = false;
         }
         else if(DialogEnd)
         {
