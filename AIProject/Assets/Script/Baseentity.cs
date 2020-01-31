@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Baseentity : MonoBehaviour
 {
-
     enum Name
     {
         A, B, C, D

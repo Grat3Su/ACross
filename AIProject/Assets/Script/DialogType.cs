@@ -47,12 +47,19 @@ public class DialogType : MonoBehaviour
 
     public string Cool(bool first)
     {
-        int index;
+        int index = 0;
         string Dialog = "안녕";
 
-        if(!first)
+        if (!first)
         {//대사
-            Dialog = "";
+            switch (index)
+            {
+                case 0:
+                    Dialog = "";
+                    break;
+                
+        }
+
         }
 
         return Dialog;
@@ -60,7 +67,6 @@ public class DialogType : MonoBehaviour
 
     public string Warm(bool first)
     {
-        int index;
         string Dialog = "\0";
 
         Dialog = "안녕";
@@ -70,7 +76,6 @@ public class DialogType : MonoBehaviour
 
     public string Romantic(bool first)
     {
-        int index;
         string Dialog = "\0";
 
         Dialog = "안녕";
@@ -80,7 +85,6 @@ public class DialogType : MonoBehaviour
 
     public string Activity(bool first)
     {
-        int index;
         string Dialog = "\0";
 
         Dialog = "안녕";
