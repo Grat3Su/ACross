@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 108261782}
   - component: {fileID: 108261786}
   - component: {fileID: 108261787}
+  - component: {fileID: 108261788}
   m_Layer: 0
   m_Name: char4
   m_TagString: citizen
@@ -367,6 +368,19 @@ MonoBehaviour:
   Personality: 2
   Intimacy: 0
   EntityNum: 2
+--- !u!114 &108261788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108261781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 638375c90bdafbb438c0eda6ac8b57fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCCon: 0
 --- !u!1 &141783444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,6 +1656,7 @@ GameObject:
   - component: {fileID: 1923199130}
   - component: {fileID: 1923199134}
   - component: {fileID: 1923199135}
+  - component: {fileID: 1923199136}
   m_Layer: 0
   m_Name: char5
   m_TagString: citizen
@@ -1800,6 +1815,19 @@ MonoBehaviour:
   Personality: 1
   Intimacy: 0
   EntityNum: 1
+--- !u!114 &1923199136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923199129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 638375c90bdafbb438c0eda6ac8b57fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCCon: 0
 --- !u!1 &1959443086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,6 +1842,7 @@ GameObject:
   - component: {fileID: 1959443087}
   - component: {fileID: 1959443091}
   - component: {fileID: 1959443092}
+  - component: {fileID: 1959443093}
   m_Layer: 0
   m_Name: char3
   m_TagString: citizen
@@ -1972,6 +2001,19 @@ MonoBehaviour:
   Personality: 3
   Intimacy: 0
   EntityNum: 3
+--- !u!114 &1959443093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959443086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 638375c90bdafbb438c0eda6ac8b57fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCCon: 0
 --- !u!1 &2013408485
 GameObject:
   m_ObjectHideFlags: 0

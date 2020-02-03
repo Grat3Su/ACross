@@ -59,9 +59,19 @@ public class DialogSysyem : MonoBehaviour
     {//업데이트를 어떻게 할까.,.,
         Baseentity player = pscript.partner[0].GetComponent<Baseentity>();
         Baseentity npc1 = pscript.partner[1].GetComponent<Baseentity>();
+        Baseentity npc2 = pscript.partner[2].GetComponent<Baseentity>();
 
         NameBox.text = npc1.GetName(npc1.EntityNum);//이름 업데이트
-        switch(dialogindex)
+        
+        
+
+        if (dialogindex > 2)
+            SetEnd(true);
+    }
+
+    void DirectDialog()
+    {
+        switch (dialogindex)
         {
             case 0:
                 Dialog.text = "인사";
@@ -78,9 +88,6 @@ public class DialogSysyem : MonoBehaviour
                 Dialog.text = "에러에러에러에러에러에러에러에러에러에러";
                 break;
         }
-
-        if (dialogindex > 2)
-            SetEnd(true);
     }
 
     public void SelectionYes()
@@ -111,5 +118,10 @@ public class DialogSysyem : MonoBehaviour
     {
         DialogEnd = isEnd;
         dialogindex = 0;
+    }
+
+    public bool GetEnd()
+    {
+        return DialogEnd;
     }
 }
