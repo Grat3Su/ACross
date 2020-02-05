@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCCharacter : MonoBehaviour
+public class NPCCharacter : Baseentity
 {
-    PlayerCharacter pscript;
-    GameObject player;
-    bool YouPartner;
-    bool InCon;
-    public int NPCCon;
-
+    float Timee;
+    float Timeer;
     void Start()
     {
-        GameObject.Find("char");
+        player = GameObject.Find("char");
         pscript = player.GetComponent<PlayerCharacter>();
     }
 
@@ -24,7 +20,7 @@ public class NPCCharacter : MonoBehaviour
             if (InCon)
             {
                 //대화중
-
+                pscript.partner[2] = friend;
             }
             else
             {
@@ -35,7 +31,7 @@ public class NPCCharacter : MonoBehaviour
         {
             if (InCon)//NPC랑 대화
             {
-
+                
             }
 
             else//암것도 안함.

@@ -13,6 +13,12 @@ public class Baseentity : MonoBehaviour
     public int Personality;
     public int Intimacy;//친밀도
     public int EntityNum;//이름
+    protected PlayerCharacter pscript;
+    protected GameObject player;
+    public bool YouPartner;
+    protected bool InCon;
+    public int NPCCon;
+    protected GameObject friend;
 
     public string GetName(int n)
     {
@@ -33,16 +39,5 @@ public class Baseentity : MonoBehaviour
             default:
                 return "UNKNOWN!";
         }
-    }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

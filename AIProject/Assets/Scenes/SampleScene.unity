@@ -205,11 +205,10 @@ GameObject:
   m_Component:
   - component: {fileID: 108261785}
   - component: {fileID: 108261784}
-  - component: {fileID: 108261783}
   - component: {fileID: 108261782}
-  - component: {fileID: 108261786}
-  - component: {fileID: 108261787}
   - component: {fileID: 108261788}
+  - component: {fileID: 108261786}
+  - component: {fileID: 108261783}
   m_Layer: 0
   m_Name: char4
   m_TagString: citizen
@@ -248,7 +247,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -262,7 +261,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!212 &108261784
 SpriteRenderer:
@@ -327,8 +326,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &108261786
-BoxCollider2D:
+--- !u!58 &108261786
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -337,37 +336,12 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.92, y: 1.92}
-    newSize: {x: 1.92, y: 1.92}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.92, y: 1.92}
-  m_EdgeRadius: 0
---- !u!114 &108261787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108261781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4697b28a75cfa2a49b0f1aa13dae8cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Personality: 2
-  Intimacy: 0
-  EntityNum: 2
+  m_Radius: 1.1
 --- !u!114 &108261788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +354,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638375c90bdafbb438c0eda6ac8b57fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Personality: 2
+  Intimacy: 0
+  EntityNum: 2
+  YouPartner: 0
   NPCCon: 0
 --- !u!1 &141783444
 GameObject:
@@ -818,10 +796,10 @@ GameObject:
   m_Component:
   - component: {fileID: 645752040}
   - component: {fileID: 645752039}
-  - component: {fileID: 645752038}
   - component: {fileID: 645752037}
-  - component: {fileID: 645752041}
   - component: {fileID: 645752042}
+  - component: {fileID: 645752041}
+  - component: {fileID: 645752038}
   m_Layer: 0
   m_Name: char
   m_TagString: citizen
@@ -860,7 +838,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -874,7 +852,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!212 &645752039
 SpriteRenderer:
@@ -939,8 +917,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &645752041
-BoxCollider2D:
+--- !u!58 &645752041
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -949,22 +927,12 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.92, y: 1.92}
-    newSize: {x: 1.92, y: 1.92}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.92, y: 1.92}
-  m_EdgeRadius: 0
+  m_Radius: 1.1
 --- !u!114 &645752042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -980,7 +948,11 @@ MonoBehaviour:
   Personality: 0
   Intimacy: 0
   EntityNum: 0
-  partner: []
+  YouPartner: 0
+  NPCCon: 0
+  partner:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &655976799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,11 +1624,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1923199133}
   - component: {fileID: 1923199132}
-  - component: {fileID: 1923199131}
   - component: {fileID: 1923199130}
-  - component: {fileID: 1923199134}
-  - component: {fileID: 1923199135}
   - component: {fileID: 1923199136}
+  - component: {fileID: 1923199134}
+  - component: {fileID: 1923199131}
   m_Layer: 0
   m_Name: char5
   m_TagString: citizen
@@ -1695,7 +1666,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1709,7 +1680,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!212 &1923199132
 SpriteRenderer:
@@ -1774,8 +1745,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1923199134
-BoxCollider2D:
+--- !u!58 &1923199134
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1784,37 +1755,12 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.92, y: 1.92}
-    newSize: {x: 1.92, y: 1.92}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.92, y: 1.92}
-  m_EdgeRadius: 0
---- !u!114 &1923199135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1923199129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4697b28a75cfa2a49b0f1aa13dae8cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Personality: 1
-  Intimacy: 0
-  EntityNum: 1
+  m_Radius: 1.1
 --- !u!114 &1923199136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1827,6 +1773,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638375c90bdafbb438c0eda6ac8b57fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Personality: 1
+  Intimacy: 0
+  EntityNum: 1
+  YouPartner: 0
   NPCCon: 0
 --- !u!1 &1959443086
 GameObject:
@@ -1838,11 +1788,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1959443090}
   - component: {fileID: 1959443089}
-  - component: {fileID: 1959443088}
   - component: {fileID: 1959443087}
-  - component: {fileID: 1959443091}
-  - component: {fileID: 1959443092}
   - component: {fileID: 1959443093}
+  - component: {fileID: 1959443091}
+  - component: {fileID: 1959443088}
   m_Layer: 0
   m_Name: char3
   m_TagString: citizen
@@ -1881,7 +1830,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1895,7 +1844,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!212 &1959443089
 SpriteRenderer:
@@ -1960,8 +1909,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1959443091
-BoxCollider2D:
+--- !u!58 &1959443091
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1970,37 +1919,12 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.92, y: 1.92}
-    newSize: {x: 1.92, y: 1.92}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.92, y: 1.92}
-  m_EdgeRadius: 0
---- !u!114 &1959443092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959443086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4697b28a75cfa2a49b0f1aa13dae8cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Personality: 3
-  Intimacy: 0
-  EntityNum: 3
+  m_Radius: 1.1
 --- !u!114 &1959443093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2013,6 +1937,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638375c90bdafbb438c0eda6ac8b57fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Personality: 3
+  Intimacy: 0
+  EntityNum: 3
+  YouPartner: 0
   NPCCon: 0
 --- !u!1 &2013408485
 GameObject:

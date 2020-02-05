@@ -20,6 +20,11 @@ public class DialogSysyem : MonoBehaviour
     public GameObject player;
     PlayerCharacter pscript;
 
+    Baseentity npc1;
+    Baseentity npc2;
+
+    int MaxScript;
+
     int dialogindex;
 
     void Start()
@@ -58,19 +63,63 @@ public class DialogSysyem : MonoBehaviour
     void UpdateDialog()//상대가 하나냐 둘이냐에 따라 다름.
     {//업데이트를 어떻게 할까.,.,
         Baseentity player = pscript.partner[0].GetComponent<Baseentity>();
-        Baseentity npc1 = pscript.partner[1].GetComponent<Baseentity>();
-        Baseentity npc2 = pscript.partner[2].GetComponent<Baseentity>();
+        npc1 = pscript.partner[1].GetComponent<Baseentity>();
+        MaxScript = 2;
 
-        NameBox.text = npc1.GetName(npc1.EntityNum);//이름 업데이트
-        
-        
+        if (pscript.partner[2] != null)
+        {
+            npc2 = pscript.partner[2].GetComponent<Baseentity>();
+            MaxScript = 4;
+            MultyDialog();
+        }
+        else
+        {
+            DirectDialog();
+        }
 
-        if (dialogindex > 2)
+
+
+
+        npc1.YouPartner = false;
+        if (dialogindex > MaxScript)
             SetEnd(true);
+    }
+
+    void MultyDialog()
+    {
+        switch (dialogindex)
+        {
+            case 0:
+                NameBox.text = npc1.GetName(npc1.EntityNum);//이름 업데이트
+                Dialog.text = "인사";
+                break;
+            case 1:
+                NameBox.text = npc2.GetName(npc1.EntityNum);//이름 업데이트
+                Dialog.text = "무슨일이야?";
+                SelectOn = true;
+                SelectPanel.SetActive(true);
+                break;
+            case 2:
+                NameBox.text = npc1.GetName(npc1.EntityNum);//이름 업데이트
+                Dialog.text = "대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2";
+                break;
+            case 3:
+                NameBox.text = npc2.GetName(npc1.EntityNum);//이름 업데이트
+                Dialog.text = "대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2";
+                break;
+            case 4:
+                NameBox.text = npc1.GetName(npc1.EntityNum);//이름 업데이트
+                Dialog.text = "대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2대화2";
+                break;
+            default:
+                Dialog.text = "에러에러에러에러에러에러에러에러에러에러";
+                break;
+        }
     }
 
     void DirectDialog()
     {
+        MaxScript = 2;
         switch (dialogindex)
         {
             case 0:
@@ -105,13 +154,13 @@ public class DialogSysyem : MonoBehaviour
 
     public void IncIndex()
     {
-        if(!SelectOn)
-        dialogindex++;
+        if (!SelectOn)
+            dialogindex++;
     }
 
     public void SetStart(bool isStart)
     {
-        DialogStart = isStart;       
+        DialogStart = isStart;
     }
 
     public void SetEnd(bool isEnd)
