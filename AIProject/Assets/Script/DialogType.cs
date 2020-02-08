@@ -62,6 +62,8 @@ public class DialogType : MonoBehaviour
 
         }
 
+        //basic
+
         return Dialog;
     }
 
@@ -69,7 +71,7 @@ public class DialogType : MonoBehaviour
     {
         string Dialog = "\0";
 
-        Dialog = "안녕";
+        Dialog = "안녕하세요";
 
         return Dialog;
     }
@@ -78,7 +80,7 @@ public class DialogType : MonoBehaviour
     {
         string Dialog = "\0";
 
-        Dialog = "안녕";
+        Dialog = "안녕?";
 
         return Dialog;
     }
@@ -87,7 +89,7 @@ public class DialogType : MonoBehaviour
     {
         string Dialog = "\0";
 
-        Dialog = "안녕";
+        Dialog = "안녕!";
 
         return Dialog;
     }

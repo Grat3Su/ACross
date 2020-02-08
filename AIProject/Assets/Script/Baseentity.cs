@@ -20,6 +20,8 @@ public class Baseentity : MonoBehaviour
     public int NPCCon;
     protected GameObject friend;
 
+    public float Speed;
+    protected Vector3 moveVelocity;
     public string GetName(int n)
     {
         switch (n)

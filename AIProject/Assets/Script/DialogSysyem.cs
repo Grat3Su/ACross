@@ -11,6 +11,8 @@ public class DialogSysyem : MonoBehaviour
     bool DialogEnd;//대화끝
     bool SelectOn;
 
+    GameObject partnerNPC;
+
     int[] ContactNum;
     public Text Dialog;
     public Text NameBox;
@@ -22,6 +24,8 @@ public class DialogSysyem : MonoBehaviour
 
     Baseentity npc1;
     Baseentity npc2;
+
+    DialogType conScript;
 
     int MaxScript;
 
@@ -62,17 +66,17 @@ public class DialogSysyem : MonoBehaviour
 
     void UpdateDialog()//상대가 하나냐 둘이냐에 따라 다름.
     {//업데이트를 어떻게 할까.,.,
-        Baseentity player = pscript.partner[0].GetComponent<Baseentity>();
-        npc1 = pscript.partner[1].GetComponent<Baseentity>();
+        Baseentity Bplayer = player.GetComponent<Baseentity>();
+        npc1 = partnerNPC.GetComponent<Baseentity>();
         MaxScript = 2;
 
-        if (pscript.partner[2] != null)
-        {
-            npc2 = pscript.partner[2].GetComponent<Baseentity>();
-            MaxScript = 4;
-            MultyDialog();
-        }
-        else
+        //if (pscript.partner[2] != null)
+        //{
+        //    npc2 = pscript.partner[2].GetComponent<Baseentity>();
+        //    MaxScript = 4;
+        //    MultyDialog();
+        //}
+        //else
         {
             DirectDialog();
         }
@@ -91,7 +95,7 @@ public class DialogSysyem : MonoBehaviour
         {
             case 0:
                 NameBox.text = npc1.GetName(npc1.EntityNum);//이름 업데이트
-                Dialog.text = "인사";
+                Dialog.text = conScript.Intro(npc1.Personality);
                 break;
             case 1:
                 NameBox.text = npc2.GetName(npc1.EntityNum);//이름 업데이트
@@ -123,7 +127,7 @@ public class DialogSysyem : MonoBehaviour
         switch (dialogindex)
         {
             case 0:
-                Dialog.text = "인사";
+                Dialog.text = conScript.Intro(npc1.Personality);
                 break;
             case 1:
                 Dialog.text = "무슨일이야?";
@@ -172,5 +176,10 @@ public class DialogSysyem : MonoBehaviour
     public bool GetEnd()
     {
         return DialogEnd;
+    }
+
+    public void SetPartner(GameObject P)
+    {
+        partnerNPC = P;
     }
 }
