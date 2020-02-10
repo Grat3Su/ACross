@@ -6,10 +6,13 @@ public class NPCCharacter : Baseentity
 {
     float Timee;
     float Timeer;
+    public GameObject N2;
+    public GameObject DIALOG;
     void Start()
     {
         player = GameObject.Find("char");
         pscript = player.GetComponent<PlayerCharacter>();
+        InCon = false;
     }
 
     // Update is called once per frame
@@ -20,7 +23,7 @@ public class NPCCharacter : Baseentity
             if (InCon)
             {
                 //대화중
-                pscript.partner[2] = friend;
+                DIALOG.GetComponent<DialogSystem>().SetNpc2(N2);               
             }
             else
             {
@@ -66,6 +69,7 @@ public class NPCCharacter : Baseentity
             if(rand>NPCCon)
             {//대화
                 InCon = true;
+                N2 = collision.gameObject;
                 collision.GetComponent<NPCCharacter>().SetCon(true);
             }
         }

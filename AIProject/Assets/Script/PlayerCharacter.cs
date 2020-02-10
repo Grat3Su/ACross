@@ -7,43 +7,62 @@ using UnityEngine.EventSystems;
 public class PlayerCharacter : Baseentity
 {
     public GameObject[] partner;
-    DialogSysyem daehwachang;
+    DialogSystem daehwachang;
     int maxArr;
     Vector3 Distance;
     float ShortDistance;
     int SelectPartner;
 
+    bool ICon;
+    public GameObject shortDis;
+
     void Start()
     {
-        daehwachang = GameObject.Find("Dialog").GetComponent<DialogSysyem>();
+        daehwachang = GameObject.Find("Dialog").GetComponent<DialogSystem>();
         ShortDistance = 10000000;
+        ICon = false;
     }
 
     private void Update()
     {
-        PlayerMove();
-
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (!ICon)
         {
-            maxArr = partner.Length;
-            for (int i = 0; i< 3; i++)
-            {
-                Distance = gameObject.transform.position - partner[i].transform.position;
+            PlayerMove();
 
-                if(Distance.magnitude < ShortDistance)
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                ShortDistance = 99999999;
+                maxArr = partner.Length;
+                for (int i = 0; i < 3; i++)
                 {
-                    ShortDistance = Distance.magnitude;
-                    SelectPartner = i;
+                    Distance = gameObject.transform.position - partner[i].transform.position;
+
+                    if (Distance.magnitude < ShortDistance)
+                    {
+                        ShortDistance = Distance.magnitude;
+                        SelectPartner = i;
+                        shortDis = partner[i];
+                    }
+                }
+
+                if (ShortDistance < 8)//일정 거리 이하. 대화 가능.
+                {
+                    Debug.Log("대화");
+                    daehwachang.SetStart(true);
+                    daehwachang.SetPartner(partner[SelectPartner]);
+                    ICon = true;
                 }
             }
-
-            if(Distance.magnitude < 5)//일정 거리 이하. 대화 가능.
+        }
+        else
+        {
+            if (daehwachang.GetEnd())//대화끝
             {
-                Debug.Log("대화");
-                daehwachang.SetStart(true);
-                daehwachang.SetPartner(partner[SelectPartner]); 
+                InCon = false;
             }
         }
+
+     
     }
 
     void PlayerMove()

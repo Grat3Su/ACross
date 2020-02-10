@@ -10,56 +10,59 @@ public class DialogType : MonoBehaviour
     }
 
 
-
+    int index;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-        public string Intro(int mood)
+    public string Intro(int mood, int n)
     {
-        switch(mood)
+        switch (mood)
         {
             case (int)Personality.COOL:
-                return Cool(true);
+                return Cool(n);
 
             case (int)Personality.WARM:
-                return Warm(true);                
+                return Warm(n);
 
             case (int)Personality.ROMANTIC:
-                return Romantic(true);
+                return Romantic(n);
 
             case (int)Personality.ACTIVITY:
-                return Activity(true);
+                return Activity(n);
 
             default:
                 return "UNKNOWN";
         }
     }
 
-    public string Cool(bool first)
+    public string Cool(int Dindex)
     {
-        int index = 0;
-        string Dialog = "안녕";
+        string Dialog = "\0";
 
-        if (!first)
-        {//대사
-            switch (index)
-            {
-                case 0:
-                    Dialog = "";
-                    break;
-                
-        }
-
+        switch (Dindex)
+        {
+            case 0:
+                Dialog = "안녕";
+                break;
+            case 1:
+                Dialog = "나한테 할말있어?";
+                break;
+            case 2:
+                Dialog = "뭔데?";
+                break;
+            default:
+                Dialog = "미안.";
+                break;
         }
 
         //basic
@@ -67,29 +70,71 @@ public class DialogType : MonoBehaviour
         return Dialog;
     }
 
-    public string Warm(bool first)
+    public string Warm(int Dindex)
     {
         string Dialog = "\0";
 
-        Dialog = "안녕하세요";
+        switch (Dindex)
+        {
+            case 0:
+                Dialog = "안녕하세요";
+                break;
+            case 1:
+                Dialog = "오늘 날씨가 좋네요.";
+                break;
+            case 2:
+                Dialog = "오늘같은 날은 햇볕을 쬐야해요.";
+                break;
+            default:
+                Dialog = "죄송해요. 모르겠네요.";
+                break;
+        }
 
         return Dialog;
     }
 
-    public string Romantic(bool first)
+    public string Romantic(int Dindex)
     {
         string Dialog = "\0";
 
-        Dialog = "안녕?";
+        switch (Dindex)
+        {
+            case 0:
+                Dialog = "안녕?";
+                break;
+            case 1:
+                Dialog = "날 만나러 온거야?";
+                break;
+            case 2:
+                Dialog = "정말? 고마워.";
+                break;
+            default:
+                Dialog = "응? 못들었어.";
+                break;
+        }
 
         return Dialog;
     }
 
-    public string Activity(bool first)
+    public string Activity(int Dindex)
     {
         string Dialog = "\0";
 
-        Dialog = "안녕!";
+        switch (Dindex)
+        {
+            case 0:
+                Dialog = "안녕!";
+                break;
+            case 1:
+                Dialog = "오늘도 파이팅!";
+                break;
+            case 2:
+                Dialog = "운동이나 할러갈까";
+                break;
+            default:
+                Dialog = "미안. 모르겠어.";
+                break;
+        }
 
         return Dialog;
     }
