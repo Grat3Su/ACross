@@ -13,7 +13,7 @@ public class PlayerCharacter : Baseentity
     float ShortDistance;
     int SelectPartner;
 
-    bool ICon;
+    public bool ICon;
     public GameObject shortDis;
 
     void Start()
@@ -45,7 +45,7 @@ public class PlayerCharacter : Baseentity
                     }
                 }
 
-                if (ShortDistance < 8)//일정 거리 이하. 대화 가능.
+                if (ShortDistance < 5)//일정 거리 이하. 대화 가능.
                 {
                     Debug.Log("대화");
                     daehwachang.SetStart(true);
@@ -53,16 +53,7 @@ public class PlayerCharacter : Baseentity
                     ICon = true;
                 }
             }
-        }
-        else
-        {
-            if (daehwachang.GetEnd())//대화끝
-            {
-                InCon = false;
-            }
-        }
-
-     
+        }     
     }
 
     void PlayerMove()

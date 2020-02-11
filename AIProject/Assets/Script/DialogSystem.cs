@@ -127,6 +127,7 @@ public class DialogSystem : MonoBehaviour
     public void SetEnd(bool isEnd)
     {
         npc1Script.YouPartner = false;
+        pscript.ICon = false;
         DialogEnd = isEnd;
         dialogindex = 0;
     }

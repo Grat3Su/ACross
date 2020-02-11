@@ -39,10 +39,16 @@ public class NPCCharacter : Baseentity
 
             else//암것도 안함.
             {
-
+                if(mode == 0)//움직임
+                MoveNPC();
 
             }
         }
+    }
+
+    void MoveNPC()
+    {
+
     }
 
     public bool GetCon()
@@ -72,6 +78,11 @@ public class NPCCharacter : Baseentity
                 N2 = collision.gameObject;
                 collision.GetComponent<NPCCharacter>().SetCon(true);
             }
+        }
+
+        if(collision.tag == "river")
+        {//상태 변경
+            mode = 1;//낚시
         }
     }
 }
