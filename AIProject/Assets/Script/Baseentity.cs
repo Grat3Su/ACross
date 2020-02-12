@@ -19,7 +19,7 @@ public class Baseentity : MonoBehaviour
     protected bool InCon;
     public int NPCCon;
     protected GameObject friend;
-    protected int mode;
+    public int mode;
 
     public float Speed;
     protected Vector3 moveVelocity;

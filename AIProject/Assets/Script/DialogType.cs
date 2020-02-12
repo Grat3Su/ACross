@@ -8,25 +8,22 @@ public class DialogType : MonoBehaviour
     {
         COOL, WARM, ROMANTIC, ACTIVITY
     }
-
+    enum Mood//대화 주제
+    {
+        NORMAL, HAPPY, ANGRY, FISHING
+    }
 
     int index;
+    GameObject Target;
 
-    // Start is called before the first frame update
-    void Start()
+    public void SetTarget(GameObject t)
     {
-
+        Target = t;
     }
 
-    // Update is called once per frame
-    void Update()
+    public string Intro(int n)
     {
-
-    }
-
-    public string Intro(int mood, int n)
-    {
-        switch (mood)
+        switch (Target.GetComponent<NPCCharacter>().Personality)
         {
             case (int)Personality.COOL:
                 return Cool(n);
@@ -44,46 +41,51 @@ public class DialogType : MonoBehaviour
                 return "UNKNOWN";
         }
     }
-
+    public TypeCool cool;
     public string Cool(int Dindex)
     {
         string Dialog = "\0";
-
-        switch (Dindex)
+        switch (Target.GetComponent<NPCCharacter>().mode)
         {
-            case 0:
-                Dialog = "안녕";
+            case (int)Mood.NORMAL:
+                Dialog = cool.CoolNormal(Dindex);
                 break;
-            case 1:
-                Dialog = "나한테 할말있어?";
+            case (int)Mood.HAPPY:
+                Dialog = cool.CoolHappy(Dindex);
                 break;
-            case 2:
-                Dialog = "뭔데?";
+            case (int)Mood.ANGRY:
+                Dialog = cool.CoolAngry(Dindex);
+                break;
+            case (int)Mood.FISHING:
+                Dialog = cool.CoolFishing(Dindex);
                 break;
             default:
                 Dialog = "미안.";
                 break;
+
         }
 
         //basic
 
         return Dialog;
     }
-
+    public TypeWarm warm;
     public string Warm(int Dindex)
     {
         string Dialog = "\0";
-
-        switch (Dindex)
+        switch (Target.GetComponent<NPCCharacter>().mode)
         {
-            case 0:
-                Dialog = "안녕하세요";
+            case (int)Mood.NORMAL:
+                Dialog = warm.WarmNormal(Dindex);
                 break;
-            case 1:
-                Dialog = "오늘 날씨가 좋네요.";
+            case (int)Mood.HAPPY:
+                Dialog = warm.WarmHappy(Dindex);
                 break;
-            case 2:
-                Dialog = "오늘같은 날은 햇볕을 쬐야해요.";
+            case (int)Mood.ANGRY:
+                Dialog = warm.WarmAngry(Dindex);
+                break;
+            case (int)Mood.FISHING:
+                Dialog = warm.WarmFishing(Dindex);
                 break;
             default:
                 Dialog = "죄송해요. 모르겠네요.";
@@ -93,43 +95,51 @@ public class DialogType : MonoBehaviour
         return Dialog;
     }
 
+    public TypeRomantic romantic;
     public string Romantic(int Dindex)
     {
         string Dialog = "\0";
 
-        switch (Dindex)
+        switch (Target.GetComponent<NPCCharacter>().mode)
         {
-            case 0:
-                Dialog = "안녕?";
+            case (int)Mood.NORMAL:
+                Dialog = romantic.RomanticNormal(Dindex);
                 break;
-            case 1:
-                Dialog = "날 만나러 온거야?";
+            case (int)Mood.HAPPY:
+                Dialog = romantic.RomanticHappy(Dindex);
                 break;
-            case 2:
-                Dialog = "정말? 고마워.";
+            case (int)Mood.ANGRY:
+                Dialog = romantic.RomanticAngry(Dindex);
+                break;
+            case (int)Mood.FISHING:
+                Dialog = romantic.RomanticFishing(Dindex);
                 break;
             default:
-                Dialog = "응? 못들었어.";
+                Dialog = "응? 뭐라고?.";
                 break;
         }
 
         return Dialog;
     }
 
+    public TypeActivity activity;
     public string Activity(int Dindex)
     {
         string Dialog = "\0";
 
-        switch (Dindex)
+        switch (Target.GetComponent<NPCCharacter>().mode)
         {
-            case 0:
-                Dialog = "안녕!";
+            case (int)Mood.NORMAL:
+                Dialog = activity.ActivityNormal(Dindex);
                 break;
-            case 1:
-                Dialog = "오늘도 파이팅!";
+            case (int)Mood.HAPPY:
+                Dialog = activity.ActivityHappy(Dindex);
                 break;
-            case 2:
-                Dialog = "운동이나 할러갈까";
+            case (int)Mood.ANGRY:
+                Dialog = activity.ActivityAngry(Dindex);
+                break;
+            case (int)Mood.FISHING:
+                Dialog = activity.ActivityFishing(Dindex);
                 break;
             default:
                 Dialog = "미안. 모르겠어.";

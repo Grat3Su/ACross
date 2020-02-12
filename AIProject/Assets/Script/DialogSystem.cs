@@ -49,7 +49,7 @@ public class DialogSystem : MonoBehaviour
             Dialogpanel.SetActive(true);
             InConversation = true;
             DialogStart = false;
-            DialogEnd = false;            
+            DialogEnd = false;
         }
         else if (DialogEnd)
         {
@@ -60,7 +60,7 @@ public class DialogSystem : MonoBehaviour
 
         if (InConversation)
         {
-                UpdateDialog();           
+            UpdateDialog();
         }
     }
 
@@ -70,24 +70,38 @@ public class DialogSystem : MonoBehaviour
         npc1Script = npc1.GetComponent<NPCCharacter>();
         MaxScript = 2;
         npc1Script.SetPartner(true);
+
+        if (npc1Script.getIncon())
+            MultiDialog();
+        else
             DirectDialog();
 
         if (dialogindex > MaxScript)
             SetEnd(true);
     }
 
+    void MultiDialog()
+    {
+        npc1Script = npc1.GetComponent<NPCCharacter>();
+        npc2Script = npc2.GetComponent<NPCCharacter>();
+
+
+    }
+
     void DirectDialog()
-    {        
+    {
         npc1Script = npc1.GetComponent<NPCCharacter>();
         NameBox.text = npc1Script.GetName(npc1Script.Personality);
+        conScript.SetTarget(npc1);
         MaxScript = 2;
         switch (dialogindex)
         {
-            case 0:  case 2:
-                Dialog.text = conScript.Intro(npc1Script.Personality, dialogindex);
+            case 0:
+            case 2:
+                Dialog.text = conScript.Intro(dialogindex);
                 break;
             case 1:
-                Dialog.text = conScript.Intro(npc1Script.Personality, dialogindex);
+                Dialog.text = conScript.Intro(dialogindex);
                 SelectOn = true;
                 SelectPanel.SetActive(true);
                 break;
